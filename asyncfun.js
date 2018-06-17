@@ -13,5 +13,8 @@ async function shortProcess() {
   console.log('stderr:', stderr);
 }
 
+function fastProcess() { console.log("That was fast!") };
+
 longProcess();
 shortProcess();
+fastProcess();
