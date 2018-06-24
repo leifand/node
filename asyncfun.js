@@ -1,3 +1,4 @@
+//@ts-check
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
@@ -13,7 +14,11 @@ async function shortProcess() {
   console.log('stderr:', stderr);
 }
 
-function fastProcess() { console.log("That was fast!") };
+async function fastProcess() { 
+  const { stdout, stderr } = await exec('echo \'That was fast!\'');
+  console.log('stdout:', stdout);
+  console.log('stderr:', stderr);
+}
 
 longProcess();
 shortProcess();
