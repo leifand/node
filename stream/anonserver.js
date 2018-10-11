@@ -3,12 +3,11 @@
     leif anderson
 */
 
-// @ts-check
-var http = require('http');
-var fs = require('fs');
-var fpath = process.argv[2];
+const http = require('http');
+const fs = require('fs');
+const fpath = process.argv[2];
 if (fpath == undefined) fpath = "anoncomments.txt";
-var port = process.argv[3];
+const port = process.argv[3];
 if (port == undefined) port = '1337';
 http.createServer(function (req, res) {
   let body = '';
