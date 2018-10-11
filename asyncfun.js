@@ -1,4 +1,3 @@
-// with great [threading in javascript] comes great [potential for bugs] -- here be dragons
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
