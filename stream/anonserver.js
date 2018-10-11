@@ -5,9 +5,9 @@
 
 const http = require('http');
 const fs = require('fs');
-const fpath = process.argv[2];
+let fpath = process.argv[2];
 if (fpath == undefined) fpath = "anoncomments.txt";
-const port = process.argv[3];
+let port = process.argv[3];
 if (port == undefined) port = '1337';
 http.createServer(function (req, res) {
   let body = '';
