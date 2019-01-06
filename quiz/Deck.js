@@ -1,6 +1,6 @@
 
 
-module.exports = class Deck {
+module.exports = class Deck { // 4 hands 0 .. 3
     constructor() {
         this.deck = [];
         this.dealt_cards = [];
@@ -54,7 +54,7 @@ module.exports = class Deck {
         return dealtcard;
     }
 
-    deal_hands() {
+    deal_hands() { // bridge*
         let hand = [];
         for (let i=0; i<4; i++) {
             for (let j=0; j<13; j++) hand.push(this.deal());
@@ -64,6 +64,28 @@ module.exports = class Deck {
         }
         return this.hands;
     }
+
+    loadHand(n) { // return suit+cards string // front end converts to suit symbols
+        
+        let res = {
+          clubs: [],
+          diamonds: [],
+          hearts: [],
+          spades: [],
+        }
+      
+        for (let i=0; i<deck.hands[n].length; i++) {
+          suit = deck.hands[n][i].suit;
+          console.log(suit);
+          if (suit == 'C') res.clubs.push(deck.hands[n][i].rank);
+          else if (suit == 'D') res.diamonds.push(deck.hands[n][i].rank);
+          else if (suit == 'H') res.hearts.push(deck.hands[n][i].rank);
+          else res.spades.push(deck.hands[n][i].rank); 
+        }
+      
+        console.log(res);
+        return res;
+      }
 
     sum_majors(n) {
         let sum=0;
