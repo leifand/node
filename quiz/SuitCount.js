@@ -1,9 +1,7 @@
 /*
     SuitCount.js
-
-    Leif Anderson
-    copyright 2018-2019
-    Dec. 27th, 2018
+    created Dec. 27th, 2018
+    copyright 2018-2019, Leif Anderson, all rights reserved
 */
 
 class SuitCount { // an abstract notion of suit counting for card players
@@ -36,7 +34,9 @@ class SuitCount { // an abstract notion of suit counting for card players
     }
 
     shuffle() {
-        let currentindex = this.combinations.length, temp, randomindex;
+        let currentindex = this.combinations.length;
+        let temp = null;
+        let randomindex = 0;
         while(0 !== currentindex) {
                 randomindex = Math.floor(Math.random() * currentindex);
                 currentindex--;
@@ -50,15 +50,21 @@ class SuitCount { // an abstract notion of suit counting for card players
         for (let i=0; i<this.combinations.length; i++) {
             console.log(this.combinations[i]);
         };
+        console.log('DONE');
+    }
+
+    clear() {
+        this.combinations = [];
     }
 
     test() {
         this.generate_suit_combinations(0,8,13);
         this.shuffle();
         this.print();
+        this.clear();
+        this.print();
     }
 }
 
 /*x = new SuitCount();
-x.test();
-console.log('100:',x.combinations[100]);*/
+x.test();*/

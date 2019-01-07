@@ -65,9 +65,9 @@ module.exports = class Deck { // 4 hands 0 .. 3
         return this.hands;
     }
 
-    loadHand(n) { // return suit+cards string // front end converts to suit symbols
+    loadHand(n) { // return suit+cards strings // front end converts to suit symbols
         
-        let res = {
+        let result = {
           clubs: [],
           diamonds: [],
           hearts: [],
@@ -77,14 +77,13 @@ module.exports = class Deck { // 4 hands 0 .. 3
         for (let i=0; i<deck.hands[n].length; i++) {
           suit = deck.hands[n][i].suit;
           console.log(suit);
-          if (suit == 'C') res.clubs.push(deck.hands[n][i].rank);
-          else if (suit == 'D') res.diamonds.push(deck.hands[n][i].rank);
-          else if (suit == 'H') res.hearts.push(deck.hands[n][i].rank);
-          else res.spades.push(deck.hands[n][i].rank); 
+          if (suit == 'C') result.clubs.push(deck.hands[n][i].rank);
+          else if (suit == 'D') result.diamonds.push(deck.hands[n][i].rank);
+          else if (suit == 'H') result.hearts.push(deck.hands[n][i].rank);
+          else result.spades.push(deck.hands[n][i].rank); 
         }
-      
-        console.log(res);
-        return res;
+
+        return result;
       }
 
     sum_majors(n) {
