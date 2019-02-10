@@ -13,5 +13,6 @@ let get_data = html => {
     console.log(data);
 }
 
+
 const url = 'https://news.ycombinator.com';
 axios.get(url).then(response=>{get_data(response.data);}).catch(error=>{console.log(error);})
