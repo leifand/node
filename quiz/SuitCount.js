@@ -50,6 +50,7 @@ class SuitCount { // an abstract notion of suit counting for card players
         for (let i=0; i<this.combinations.length; i++) {
             console.log(this.combinations[i]);
         };
+        console.log(this.combinations.length);
         console.log('DONE');
     }
 
@@ -66,5 +67,5 @@ class SuitCount { // an abstract notion of suit counting for card players
     }
 }
 
-/*x = new SuitCount();
-x.test();*/
+x = new SuitCount();
+x.test();
