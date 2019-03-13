@@ -19,6 +19,7 @@ http.createServer(function (req, res) {
     body+= " ";
     body+= Date.now();
     body+= "|";
+    body+= "\n";
   });
   req.on('end', () => {
     fs.appendFile(fpath, body, function (err) {
