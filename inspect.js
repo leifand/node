@@ -19,4 +19,13 @@ console.log(x == y);
 console.log(x === y);
 console.log();
 
-inspect(console);
+class some_class {
+    constructor() {
+        this.sym = Symbol('sym');
+        this.prop = {a:'1',b:'2'};
+        this.other_prop = 9.0;
+    }
+}
+
+w = new some_class();
+inspect(w);
