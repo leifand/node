@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
   let body = '';
   req.setEncoding('utf8');
   req.on('data', (chunk) => {
-    console.log('MUNCH MUNCH MUNCH ...');
+    console.log('\x1b[36m%s\x1b[0m','MUNCH MUNCH MUNCH ...');
     body += chunk;
     console.log(chunk);
     body+= " ";
@@ -24,12 +24,12 @@ http.createServer(function (req, res) {
   req.on('end', () => {
     fs.appendFile(fpath, body, function (err) {
         if (err) throw err; // what, me worry?
-        console.log('comment saved');
+        console.log('\x1b[36m%s\x1b[0m','comment saved');
       });
   });
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Your anonymous comment has been logged.\n');
 }).listen(port);
-console.log(`ANONYMOUS COMMENT SERVER RUNNING ON PORT ${port}`);
-console.log(`system: ${process.platform}`);
-console.log(`data file: ${fpath}`);
+console.log('\x1b[33m%s\x1b[0m',`ANONYMOUS COMMENT SERVER RUNNING ON PORT ${port}`);
+console.log('\x1b[32m%s\x1b[0m',`system: ${process.platform}`);
+console.log('\x1b[36m%s\x1b[0m',`data file: ${fpath}`);
