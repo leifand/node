@@ -18,7 +18,6 @@ http.createServer(function (req, res) {
     console.log(chunk);
     body+= " ";
     body+= Date.now();
-    body+= "|";
     body+= "\n";
   });
   req.on('end', () => {
@@ -33,3 +32,4 @@ http.createServer(function (req, res) {
 console.log('\x1b[33m%s\x1b[0m',`ANONYMOUS COMMENT SERVER RUNNING ON PORT ${port}`);
 console.log('\x1b[32m%s\x1b[0m',`system: ${process.platform}`);
 console.log('\x1b[36m%s\x1b[0m',`data file: ${fpath}`);
+// curl http://localhost:1337 -d "taco taco enchilada"
